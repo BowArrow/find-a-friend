@@ -20,9 +20,9 @@
             <div class="col-md-12">
                 <form class="text-white p-5">
 
-                    <input type="name" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Name">
+                    <input type="name" id="nameInput" class="form-control mb-4" placeholder="Name">
 
-                    <input type="imgLink" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Image Link">
+                    <input type="imgLink" id="imgURL" class="form-control mb-4" placeholder="Image Link">
 
                 </form>
             </div>
@@ -182,14 +182,16 @@
                     </button>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img class="img-fluid" id="photo" alt="best friend">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img class="img-fluid" id="photo" alt="best friend">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="diplay-1" id=friendName></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="display-1" id=friendName></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -260,12 +262,19 @@
             event.preventDefault();
             var userAnswers = [];
 
+
             $(".servThis").each(function () {
                 var answer = $("div input[name='surveyRadios']:checked", $(this)).val() || 0;
                 userAnswers.push(parseInt(answer));
             });
 
             console.log(userAnswers)
+            var newUser = {
+                name: $("#nameInput").val().trim() || "Pepega",
+                photo: $("#imgURL").val().trim() || "https://ih0.redbubble.net/image.670999245.3852/raf,750x1000,075,t,heather_grey.u1.jpg",
+                scores: userAnswers
+            }
+
             $.ajax({ url: "/api/friends", method: "GET" })
                 .then(function (friendData) {
                     let total = 0;
@@ -279,6 +288,7 @@
                             url: friendData[fd].photo,
                             total: total
                         })
+                        total = 0;
                     }
                     let bestFriend = closest(friendsTemp, 0);
                     $("#photo").attr("src", bestFriend.url);
@@ -299,7 +309,18 @@
                     }
 
                 });
-
+            setTimeout(() => {
+                $.post("/api/friends", newUser, function (data) {
+                    if (data) {
+                        console.log("New user added");
+                    } else {
+                        console.log("User not added");
+                    }
+                });
+            }, 3000);
+            $("#nameInput").val("");
+            $("#imgURL").val("");
+            $("div input[name='surveyRadios']").attr('checked', false);
         });
 
     </script>
