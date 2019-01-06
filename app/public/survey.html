@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Friend Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.0/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body class="sunny-morning-gradient" style="overflow-x: hidden;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="text-white p-5">
+
+                    <input type="name" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Name">
+
+                    <input type="imgLink" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Image Link">
+
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="display-1 text-white text-center" id="title">How much do you like..</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="ml-5" id="survey">
+
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <button class="btn btn-outline-white btn-lg px-5" data-toggle="modal" data-target="#friendModal" id="submit">Submit</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small">
+
+        <!-- Footer Links -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">About us</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Products</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Awards</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Help</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Contact</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <hr class="rgba-white-light" style="margin: 0 15%;">
+
+            <!-- Grid row-->
+            <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+                <!-- Grid column -->
+                <div class="col-md-8 col-12 mt-5">
+                    <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, totam rem
+                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                        sunt explicabo.
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur.</p>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+            <!-- Grid row-->
+            <div class="row pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-12">
+
+                    <div class="mb-5 flex-center">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic">
+                            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+                        </a>
+                        <!--Pinterest-->
+                        <a class="pin-ic">
+                            <i class="fab fa-pinterest fa-lg white-text"> </i>
+                        </a>
+
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="#"> FindAFriend.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade right" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalPreviewLabel">Your New Friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img class="img-fluid" id="photo" alt="best friend">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="diplay-1" id=friendName></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.0/js/mdb.min.js"></script>
+    <script>
+        const questions = [
+            "going outdoors?",
+            "going to the movies?",
+            "comedy?",
+            "serious conversations?",
+            "parties?",
+            "board/card games?",
+            "video games?",
+            "exercising?",
+            "large groups of people?",
+            "small groups of people?"
+        ];
+
+        const surveyBox = $("#survey");
+        const div = $("<div>")
+        const h1 = $("<h1>")
+        const input = $("<input>");
+        const label = $("<label>");
+        const form = $(`<form>`);
+
+        for (var i = 0; i < questions.length; i++) {
+            j = 0;
+            h1.html(questions[i]);
+            h1.addClass("text-white")
+            form.attr("id", `form${i}`).addClass("servThis");
+            surveyBox.append(h1.clone(), form.clone());
+            formFix();
+        }
+        function formFix() {
+            if (j < 5) {
+                div.addClass("form-check form-check-inline text-white ml-4");
+                input.addClass("form-check-input").attr({
+                    type: "radio",
+                    id: `materialInline${j + 1}`,
+                    name: `surveyRadios`,
+                    value: `${j + 1}`
+                })
+                label.addClass("form-check-label").attr({
+                    for: `materialInline${j + 1}`
+                }).html(j + 1);
+                div.append(input, label);
+                $(`#form${i}`).append(div.clone());
+                j++;
+                formFix();
+            }
+        }
+
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            var userAnswers = [];
+
+            $(".servThis").each(function () {
+                var answer = $("div input[name='surveyRadios']:checked", $(this)).val() || 0;
+                userAnswers.push(parseInt(answer));
+            });
+
+            console.log(userAnswers)
+            $.ajax({ url: "/api/friends", method: "GET" })
+                .then(function (friendData) {
+                    let total = 0;
+                    let friendsTemp = []
+                    for (let fd = 0; fd < friendData.length; fd++) {
+                        for (let k = 0; k < userAnswers.length; k++) {
+                            total += Math.abs(userAnswers[k] - friendData[fd].scores[k])
+                        };
+                        friendsTemp.push({
+                            name: friendData[fd].name,
+                            url: friendData[fd].photo,
+                            total: total
+                        })
+                    }
+                    let bestFriend = closest(friendsTemp, 0);
+                    $("#photo").attr("src", bestFriend.url);
+                    $("#friendName").html(bestFriend.name);
+
+                    function closest(array, num) {
+                        var c = 0;
+                        var minDiff = 1000;
+                        var ans;
+                        for (c in array) {
+                            var m = Math.abs(num - array[c].total);
+                            if (m < minDiff) {
+                                minDiff = m;
+                                ans = array[c];
+                            }
+                        }
+                        return ans;
+                    }
+
+                });
+
+        });
+
+    </script>
+</body>
+
+</html>
